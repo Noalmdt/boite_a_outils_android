@@ -1,0 +1,53 @@
+# --- Qt Creator ---
+*.user
+*.user.*
+*.autosave
+*.pro.user*
+CMakeLists.txt.user*
+.qtcreator/
+.qtc_clangd/
+
+# --- Dossiers de compilation ---
+build/
+build-*/
+Build/
+out/
+Debug/
+Release/
+cmake-build-*/
+
+# --- Fichiers générés par Qt (qmake / moc / uic / rcc) ---
+Makefile*
+*.qmake.stash
+.qmake.stash
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+*_plugin_import.cpp
+*_autogen/
+
+# --- Fichiers objets et binaires ---
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dll
+*.exe
+*.pdb
+*.ilk
+*.exp
+
+# --- Déploiement local (installeur, DLL Qt, platform-tools) ---
+Deploy/
+Output/
+platform-tools/
+
+# --- Divers ---
+*.log
+*.tmp
+Thumbs.db
+.DS_Store
+.vscode/
+.idea/
