@@ -50,7 +50,7 @@ Au démarrage, l'application consulte le fichier [`updates.json`](updates.json) 
 
 ## Compiler depuis les sources
 
-**Prérequis :** Qt 6 (ou Qt 5), Qt Creator, un compilateur C++ (MinGW ou MSVC) et la bibliothèque [QSimpleUpdater](https://github.com/alex-spataru/QSimpleUpdater).
+**Prérequis :** Qt 6 (ou Qt 5), Qt Creator et un compilateur C++ (MinGW ou MSVC). La bibliothèque [QSimpleUpdater](https://github.com/alex-spataru/QSimpleUpdater) est incluse dans le dossier `QSimpleUpdater/`.
 
 1. Cloner le dépôt et l'ouvrir dans Qt Creator.
 2. Choisir un kit et compiler en mode **Release**.
