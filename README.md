@@ -1,6 +1,7 @@
 # Boîte à outils Android
 
 Application de bureau (Qt / C++) qui regroupe, dans une interface simple, les commandes `adb` et `fastboot` les plus courantes : détection de l'appareil, diagnostic, sauvegarde des photos ou de la mémoire interne, déverrouillage du bootloader et flashage d'images (Recovery, Système).
+Projet personnel pour m'entraîner à la logique du C++, réalisé avec l'aide de l'IA pour la partie interface graphique (Qt).
 
 > ⚠️ **Avertissement : utilisation à vos risques.**
 > Le déverrouillage du bootloader **efface toutes les données** de l'appareil, et le flashage d'une image incorrecte peut le **rendre inutilisable** (« brick »). Cet outil est fourni **sans aucune garantie** et l'auteur ne peut être tenu responsable des dommages causés à votre appareil ou à vos données. Faites une sauvegarde avant toute opération et vérifiez que les fichiers que vous flashez correspondent exactement à votre modèle.
