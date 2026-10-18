@@ -1,0 +1,101 @@
+{
+  "name": "Boite_a_outils_android",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "android-app",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "cf171eac-c453-4595-abf9-8531c434d846",
+      "name": "Webhook",
+      "webhookId": "87229357-9cb1-4520-a012-ed560b7c263d"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "ccb614cf-a3be-4140-97e4-ea2475be4f89",
+              "leftValue": "={{ $json.body.event }}",
+              "rightValue": "cmd_error",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        224,
+        0
+      ],
+      "id": "1f190f36-f04e-4894-8dee-5586a0746c18",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\\scripts\\toast.ps1 -Titre \"Boîte à outils Android\" -Message \"Erreur adb ou fastboot, voir l'appli\""
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        448,
+        -48
+      ],
+      "id": "7da0ed57-e6e0-4115-9dfd-a2901f07c66e",
+      "name": "Execute Command"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Execute Command",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "nodeGroups": [],
+  "tags": []
+}

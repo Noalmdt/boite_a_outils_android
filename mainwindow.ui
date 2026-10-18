@@ -6,232 +6,480 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1280</width>
+    <height>740</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Boîte à outils Android</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+    background-color: #f4f6f9;
+}
+QGroupBox {
+    font-weight: bold;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    margin-top: 12px;
+    padding-top: 20px;
+    background-color: #ffffff;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 12px;
+    padding: 0 4px 0 4px;
+    color: #333333;
+}
+QPushButton {
+    background-color: #0078d7;
+    color: white;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-weight: bold;
+    border: none;
+}
+QPushButton:hover {
+    background-color: #005a9e;
+}
+QPushButton:pressed {
+    background-color: #004578;
+}
+QPushButton:disabled {
+    background-color: #cccccc;
+    color: #666666;
+}
+QLineEdit {
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 6px;
+    background-color: #ffffff;
+}
+QLineEdit:focus {
+    border: 1px solid #0078d7;
+}
+QPlainTextEdit {
+    background-color: #1e1e1e;
+    color: #00ff00;
+    font-family: Consolas, &quot;Courier New&quot;, monospace;
+    font-size: 10pt;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    padding: 8px;
+}
+QProgressBar {
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    text-align: center;
+    background-color: #e0e0e0;
+    height: 20px;
+}
+QProgressBar::chunk {
+    background-color: #0078d7;
+    border-radius: 3px;
+}
+QLabel {
+    color: #555555;
+    font-size: 9pt;
+}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="btnDetecter">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>40</y>
-      <width>171</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Vérifier le téléphone</string>
-    </property>
-   </widget>
-   <widget class="QPlainTextEdit" name="txtLogs">
-    <property name="geometry">
-     <rect>
-      <x>440</x>
-      <y>15</y>
-      <width>351</width>
-      <height>521</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnUnlock">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>60</y>
-      <width>171</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Déverrouiller le Bootloader</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnFlashRecovery">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>100</y>
-      <width>171</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Flasher le Recovery</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnDiagnostic">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>40</y>
-      <width>171</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Diagnostic Téléphone</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnSauvegarde">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>60</y>
-      <width>171</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Sauvegarder les Photos</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnSauvegardeTotale">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>80</y>
-      <width>171</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Sauvegarde Complète</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="inputPathCaseBackup">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>100</y>
-      <width>171</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="placeholderText">
-     <string>Chemin d'accès*</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnFlashSystem">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>140</y>
-      <width>171</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Flasher le Système</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="inputCodeSecret">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>80</y>
-      <width>171</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="placeholderText">
-     <string>Entrez la clé secrete à 16 chiffres</string>
-    </property>
-   </widget>
-   <widget class="QProgressBar" name="barreProgression">
-    <property name="geometry">
-     <rect>
-      <x>440</x>
-      <y>542</y>
-      <width>351</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="value">
-     <number>24</number>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>541</y>
-      <width>421</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;*Pour les chemins d'accès veuillez mettres entre chaque dossiers un slash (/) ou un double anti slash (\\)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="inputPathRecovery">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>120</y>
-      <width>101</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="placeholderText">
-     <string>Chemin d'accès*</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnBrowseRecovery">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>120</y>
-      <width>56</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Parcourir</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="inputPathSystem">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>160</y>
-      <width>101</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="placeholderText">
-     <string>Chemin d'accès*</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnBrowseSystem">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>160</y>
-      <width>56</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Parcourir</string>
-    </property>
-   </widget>
+   <layout class="QVBoxLayout" name="verticalLayoutMain">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayoutContent" stretch="0,0,1">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayoutLeft" stretch="0,0,0,1">
+        <item>
+         <widget class="QGroupBox" name="groupBoxDiagnostic">
+          <property name="title">
+           <string>Diagnostic</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayoutDiagnostic">
+           <item>
+            <widget class="QPushButton" name="btnDiagnostic">
+             <property name="text">
+              <string>Diagnostic Téléphone</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBoxBackup">
+          <property name="title">
+           <string>Sauvegarde</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayoutBackup">
+           <item>
+            <widget class="QPushButton" name="btnSauvegarde">
+             <property name="text">
+              <string>Sauvegarder les Photos</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnSauvegardeTotale">
+             <property name="text">
+              <string>Sauvegarde Complète</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayoutBackupPath">
+             <item>
+              <widget class="QLineEdit" name="inputPathCaseBackup">
+               <property name="placeholderText">
+                <string>Dossier de destination (optionnel)</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnBrowseCaseBackup">
+               <property name="maximumSize">
+                <size>
+                 <width>40</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>...</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBoxAdvanced">
+          <property name="title">
+           <string>Opérations Avancées</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayoutAdvanced">
+           <item>
+            <widget class="QPushButton" name="btnDetecter">
+             <property name="text">
+              <string>Vérifier le téléphone</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnUnlock">
+             <property name="text">
+              <string>Déverrouiller le Bootloader</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="comboVerrouMethode">
+             <property name="toolTip">
+              <string>Commande utilisée pour déverrouiller / reverrouiller le bootloader. « flashing » convient à la plupart des appareils récents (Pixel...), « oem » aux anciens appareils.</string>
+             </property>
+             <item>
+              <property name="text">
+               <string>Méthode : fastboot flashing (appareils récents)</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Méthode : fastboot oem (anciens appareils)</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="inputCodeSecret">
+             <property name="toolTip">
+              <string>Utilisée uniquement avec la méthode « oem ».</string>
+             </property>
+             <property name="echoMode">
+              <enum>QLineEdit::EchoMode::Password</enum>
+             </property>
+             <property name="placeholderText">
+              <string>Clé secrète (méthode oem uniquement)</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnFlashRecovery">
+             <property name="text">
+              <string>Flasher le Recovery</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayoutRecovery">
+             <item>
+              <widget class="QLineEdit" name="inputPathRecovery">
+               <property name="placeholderText">
+                <string>Chemin du Recovery (.img)</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnBrowseRecovery">
+               <property name="maximumSize">
+                <size>
+                 <width>40</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>...</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnFlashSystem">
+             <property name="text">
+              <string>Flasher le Système</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayoutSystem">
+             <item>
+              <widget class="QLineEdit" name="inputPathSystem">
+               <property name="placeholderText">
+                <string>Chemin du Système (.img)</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnBrowseSystem">
+               <property name="maximumSize">
+                <size>
+                 <width>40</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>...</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacerLeft">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayoutMiddle" stretch="0,0,1">
+        <item>
+         <widget class="QGroupBox" name="groupBoxFactory">
+          <property name="title">
+           <string>Flash d'un dossier (GrapheneOS / factory image) — EXPÉRIMENTAL</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayoutFactory">
+           <item>
+            <widget class="QCheckBox" name="chkExperimental">
+             <property name="text">
+              <string>Activer les fonctions expérimentales (flash d'un dossier, non testé)</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="lblFactoryInfo">
+             <property name="text">
+              <string>Dossier extrait contenant flash-all.bat (zip GrapheneOS ou factory image Pixel). Le bootloader doit être déverrouillé.</string>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayoutFactoryPath">
+             <item>
+              <widget class="QLineEdit" name="inputPathFactory">
+               <property name="placeholderText">
+                <string>Dossier extrait (contient flash-all.bat)</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnBrowseFactory">
+               <property name="maximumSize">
+                <size>
+                 <width>40</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>...</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnExtraireZip">
+             <property name="text">
+              <string>Extraire un .zip...</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnFlashFactory">
+             <property name="text">
+              <string>Flasher le dossier</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnRelock">
+             <property name="text">
+              <string>Reverrouiller le Bootloader</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBoxWebhook">
+          <property name="title">
+           <string>Configuration n8n (Webhook)</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayoutWebhook">
+           <item>
+            <widget class="QCheckBox" name="chkWebhookEnabled">
+             <property name="text">
+              <string>Activer les webhooks n8n</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayoutWebhook">
+             <item>
+              <widget class="QLineEdit" name="inputWebhookUrl">
+               <property name="placeholderText">
+                <string>http://localhost:5678/webhook/android-app</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnTestWebhook">
+               <property name="text">
+                <string>Tester</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacerMiddle">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayoutRight">
+        <item>
+         <widget class="QLabel" name="lblLogsTitle">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Journal d'exécution</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="txtLogs">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+          <property name="placeholderText">
+           <string>Les logs de l'application s'afficheront ici...</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayoutProgress" stretch="1,0">
+          <item>
+           <widget class="QProgressBar" name="barreProgression">
+            <property name="value">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnAnnuler">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton { background-color: #c42b1c; }
+QPushButton:hover { background-color: #a52318; }
+QPushButton:disabled { background-color: #cccccc; color: #666666; }</string>
+            </property>
+            <property name="text">
+             <string>Annuler</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QLabel" name="lblFooter">
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;*Pour les chemins d'accès veuillez mettre entre chaque dossiers un slash (/) ou un double antislash (\\)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>1280</width>
      <height>18</height>
     </rect>
    </property>
