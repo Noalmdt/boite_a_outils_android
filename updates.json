@@ -2,16 +2,16 @@
   "updates": {
     "windows": {
       "open-url": "",
-      "latest-version": "1.0.0",
-      "download-url": "https://github.com/Noalmdt/boite_a_outils_android/releases/download/v1.0.0/BoiteAOutils-setup.exe",
-      "changelog": "Première version publique.",
+      "latest-version": "2.0.0",
+      "download-url": "https://github.com/Noalmdt/boite_a_outils_android/releases/download/v2.0.0/BoiteAOutils-setup.exe",
+      "changelog": "Webhooks n8n (optionnel), choix de la méthode de déverrouillage, reverrouillage du bootloader, bouton Annuler, protections renforcées. Le flash d'un dossier (GrapheneOS / Pixel) est expérimental et désactivé par défaut.",
       "mandatory": false
     },
     "linux": {
       "open-url": "https://github.com/Noalmdt/boite_a_outils_android/releases/latest",
-      "latest-version": "1.0.0",
+      "latest-version": "2.0.0",
       "download-url": "",
-      "changelog": "Première version publique.",
+      "changelog": "Webhooks n8n (optionnel), choix de la méthode de déverrouillage, reverrouillage du bootloader, bouton Annuler, protections renforcées.",
       "mandatory": false
     }
   }
